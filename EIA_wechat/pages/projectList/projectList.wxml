@@ -1,0 +1,32 @@
+<view class="page-body">
+  <view class="kind-list">
+<text class="sub-title">所属分组：{{companyName}}</text>
+ <block>
+      <view class="kind-list-item">
+        <view  class="kind-list-item-hd" bindtap="createToggle">
+          <view class="kind-list-text">新建项目</view>
+          <image class="kind-list-img" src="../../resources/images/form.png"></image>
+        </view>
+      </view>
+    </block>
+
+    <block>
+      <view class="kind-list-item">
+        <view  class="kind-list-item-hd {{projectListopen?'kind-list-item-hd-show':''}}" bindtap="kindToggle">
+          <view class="kind-list-text">项目列表</view>
+          <image class="kind-list-img" src="../../resources/images/form.png"></image>
+        </view>
+        <view class="kind-list-item-bd {{projectListopen?'kind-list-item-bd-show':''}}">
+          <view class="navigator-box {{projectListopen?'navigator-box-show':''}}">
+            <block  wx:for-items="{{projectList}}" wx:for-item="project" wx:key="*item">
+              <navigator url="/pages/updateProject/updateProject?projectId={{project.id}}&projectName={{project.projectName}}&companyId={{companyId}}&companyName={{companyName}}" class="navigator">
+                <view class="navigator-text">{{project.projectName}}</view>
+                <view class="navigator-arrow"></view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+/**index.wxss**/
+.index-hd {
+  padding: 50rpx;
+  text-align: center;
+}
+
+.index-logo {
+  width: 600rpx;
+  height: 240rpx;
+  margin-top:10px;
+}
+
+.title {
+  color:rgb(49, 158, 149);
+}
+
+.sub-title {
+  font-size: 30rpx;
+  color:grey;
+  font-weight: bold;
+}
+
+.icon {
+  width:40rpx;
+  height:40rpx;
+  margin-bottom: -3px;
+}
+
+.page-body-info {
+  height: 50rpx;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  padding: 20rpx 0 100rpx 0;
+}
+
+
+.page-body-text-small {
+  font-size: 24rpx;
+  color: #000;
+  margin-bottom: 10rpx;
+}
+.page-body-text-location {
+  display: flex;
+  font-size: 50rpx;
+}
+.page-body-text-location text {
+  margin: 10rpx;
+}
+
+.page-body-text {
+  font-size: 30rpx;
+  line-height: 26px;
+  color: #ccc;
+}
+
+.container {
+  background-color: #F8F8F8;
+}

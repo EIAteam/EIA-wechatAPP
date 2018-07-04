@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="index-hd">
+    <rich-text nodes="<h2 class='title'>天视<sup style='font-size:10px;'>TM</sup>地理信息一点通</h2>"></rich-text>
+    <text class="sub-title">环评地理信息分析器</text>
+    <image class="index-logo" src="../../resources/images/logo.png"></image>
+ <view class="page-body-info">
+        <text class="page-body-text-small">当前位置经纬度</text>
+        <block wx:if="{{located === false}}">
+          <text class="page-body-text">未获取</text>
+        </block>
+        <block wx:if="{{located === true}}">
+          <view class="page-body-text-location">
+            <text>E: {{location.longitude[0]}}°{{location.longitude[1]}}′</text>
+            <text>N: {{location.latitude[0]}}°{{location.latitude[1]}}′</text>
+          </view>
+        </block>
+      </view>
+    <view wx:if="{{!hasLocation}}">
+    <button type="primary" bindtap="startLocation" plain="true">
+      <image class="icon" src="../../resources/images/location.png"></image>
+      <text>开启地理定位</text>
+    </button>
+    </view>
+    <view wx:else>
+     <button  bindtap="closeLocation" plain="true">
+
+      <text>关闭地理定位</text>
+    </button>
+    <map id="myMap" 
+        style="width: 100%; height: 200px;"
+        show-location
+        scale="18"
+        >
+    </map>
+     <button type="primary" bindtap="getLocation" plain="true">
+      <image class="icon" src="../../resources/images/location.png"></image>
+      <text>获取地理位置</text>
+    </button>
+    </view>
+    <navigator url="/pages/login/login" open-type="navigate">
+      <button type="primary"  style="margin-top:100rpx">保存经纬度？点击一下</button>
+    </navigator>
+     <!--navigator url= "/pages/updateProject/updateProject" open-type="navigate">
+      <button type="primary"  style="margin-top:100rpx">用户登录</button>
+    </navigator-->
+  </view>
+</view>

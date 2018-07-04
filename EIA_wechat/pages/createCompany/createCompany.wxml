@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="weui-cells weui-cells_after-title">
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">分组名称</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入新建分组名称" name="data" value="{{data}}" bindinput="newCompanyInput"></input>
+          </view>
+        </view>
+      </view>
+      <view class="btn-area">
+        <button type="primary" style="margin-top:40rpx" bindtap="createCompany">新建分组</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+<view class="page-body">
+ 
+  <view class="kind-list">
+<text class="sub-title">分组管理</text>
+ <block>
+      <view class="kind-list-item">
+        <view  class="kind-list-item-hd" bindtap="createToggle">
+          <view class="kind-list-text">新建分组</view>
+          <image class="kind-list-img" src="../../resources/images/form.png"></image>
+        </view>
+      </view>
+    </block>
+
+    <block>
+      <view class="kind-list-item">
+        <view  class="kind-list-item-hd {{companyListopen?'kind-list-item-hd-show':''}}" bindtap="kindToggle">
+          <view class="kind-list-text">分组列表</view>
+          <image class="kind-list-img" src="../../resources/images/form.png"></image>
+        </view>
+        <view class="kind-list-item-bd {{companyListopen?'kind-list-item-bd-show':''}}">
+          <view class="navigator-box {{companyListopen?'navigator-box-show':''}}">
+            <block  wx:for-items="{{companyList}}" wx:for-item="company" wx:key="*item">
+              <navigator url="/pages/projectList/projectList?companyId={{company.companyId}}&companyName={{company.companyName}}" class="navigator">
+                <view class="navigator-text">{{company.companyName}}</view>
+                <view class="navigator-arrow"></view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

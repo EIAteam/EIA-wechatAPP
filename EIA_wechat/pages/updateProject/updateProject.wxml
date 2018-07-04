@@ -1,0 +1,74 @@
+<!--index.wxml-->
+<view class="container">
+<text class="title">所属分组：{{companyName}}</text>
+  <view class="page-body">
+   <text class="sub-title">{{projectName}}</text>
+    <view class="page-section">
+   <image class="index-logo" src="../../resources/images/logo.png"></image>
+ <view class="page-body-info">
+        <text class="page-body-text-small">当前位置经纬度</text>
+        <block wx:if="{{longitude === null}}">
+          <text class="page-body-text">未获取</text>
+        </block>
+        <block wx:else>
+          <view class="page-body-text-location">
+            <text>E: {{location.longitude[0]}}°{{location.longitude[1]}}′</text>
+            <text>N: {{location.latitude[0]}}°{{location.latitude[1]}}′</text>
+          </view>
+        </block>
+      </view>
+  </view>
+
+
+  <view class="weui-cells__title">区镇信息</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">当前选择</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{townshipOptions}}">
+              <view class="weui-input">{{townshipOptions[index]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+            <view class="kind-list-item">
+        <view  class="kind-list-item-hd" bindtap="workshopEastImgUpload">
+          <view class="kind-list-text">厂址四至图-东</view>
+          <image class="kind-list-img" src="../../resources/images/add.png"></image>
+        </view>
+         </view>
+
+          <view class="kind-list-item">
+             <view  class="kind-list-item-hd" bindtap="workshopSouthImgUpload">
+          <view class="kind-list-text">厂址四至图-南</view>
+          <image class="kind-list-img" src="../../resources/images/add.png"></image>
+        </view>
+         </view>
+
+
+ <view class="kind-list-item">
+         <view  class="kind-list-item-hd" bindtap="workshopWestImgUpload">
+          <view class="kind-list-text">厂址四至图-西</view>
+          <image class="kind-list-img" src="../../resources/images/add.png"></image>
+        </view>
+         </view>
+
+
+ <view class="kind-list-item">
+       
+        <view  class="kind-list-item-hd" bindtap="workshopNorthImgUpload">
+          <view class="kind-list-text">厂址四至图-北</view>
+          <image class="kind-list-img" src="../../resources/images/add.png"></image>
+        </view>
+         </view>
+
+        <button type="primary"  style="margin-top:100rpx" bindtap="updateInfo">保存信息</button>
+
+
+
+      
+
+</view>
+</view>
